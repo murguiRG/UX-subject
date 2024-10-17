@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material Design Card',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Cards Page'),
+      home: const MyHomePage(title: 'Products Page'),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -30,33 +30,50 @@ class AddToCart extends StatefulWidget {
 }
 
 class _AddToCartState extends State<AddToCart> {
+  void _showCustomSnackBar(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+          content: const IntrinsicWidth(
+              child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Center(
+              child: Text(
+                'Product added to cart',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          )),
+          behavior: SnackBarBehavior.floating,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          margin: const EdgeInsets.all(20),
+          backgroundColor: Colors.green.shade300),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        //* Shows a snackbar with a message
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Added to cart')),
-        );
+    return ElevatedButton(
+      onPressed: () {
+        _showCustomSnackBar(context);
       },
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ButtonStyle(
-          shape: MaterialStateProperty.all<CircleBorder>(
-            const CircleBorder(
-              side: BorderSide.none,
-            ),
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all<CircleBorder>(
+          const CircleBorder(
+            side: BorderSide.none,
           ),
-          backgroundColor: MaterialStateProperty.all<Color>(
-            Theme.of(context).colorScheme.secondary,
-          ),
-          minimumSize: MaterialStateProperty.all<Size>(const Size(45, 45)),
-          elevation: MaterialStateProperty.all<double>(3),
         ),
-        child: const Icon(
-          Icons.add_rounded,
-          color: Colors.white,
+        backgroundColor: MaterialStateProperty.all<Color>(
+          Theme.of(context).colorScheme.secondary,
         ),
+        minimumSize: MaterialStateProperty.all<Size>(const Size(45, 45)),
+        elevation: MaterialStateProperty.all<double>(3),
+      ),
+      child: const Icon(
+        Icons.add_rounded,
+        color: Colors.white,
       ),
     );
   }
@@ -78,7 +95,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //* Color shades function call
-    final List<Color> colorShades = generateShades(Colors.red, 15);
+    final List<Color> colorShades = generateShades(Colors.red.shade400, 9);
 
     return Scaffold(
         appBar: AppBar(
@@ -129,14 +146,29 @@ class MyHomePage extends StatelessWidget {
                                             style:
                                                 TextStyle(color: Colors.grey),
                                           ),
-                                          const SizedBox(height: 20),
-                                          Text(
-                                            '\$100',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 16,
-                                                color: Colors.grey.shade700),
-                                          ),
+                                          const SizedBox(height: 8),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                '\$100',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 16,
+                                                    color:
+                                                        Colors.grey.shade700),
+                                              ),
+                                              TextButton(
+                                                  onPressed: () {},
+                                                  child: const Text(
+                                                    'View details',
+                                                    style: TextStyle(
+                                                      color: Colors.grey,
+                                                    ),
+                                                  ))
+                                            ],
+                                          )
                                         ],
                                       )),
                                 ),

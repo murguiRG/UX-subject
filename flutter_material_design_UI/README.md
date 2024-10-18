@@ -1,16 +1,7 @@
-# material_design_flutter
+## material_design_flutter
 
-A new Flutter project.
+A Flutter interface designed to apply Material Design elements and styling.
 
-## Getting Started
+### Link to important file
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [main.dart](https://github.com/murguiRG/UX-subject/blob/46998f2857c71a5e27ad90762cfadc64dd529632/flutter_material_design_UI/lib/main.dart)

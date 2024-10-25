@@ -1,4 +1,6 @@
 import 'package:flutter/foundation.dart' as foundation;
+
+//* My imports
 import 'product.dart';
 import 'products_repository.dart';
 
@@ -6,9 +8,8 @@ double _salesTaxRate = 0.06;
 double _shippingCostPerItem = 7;
 
 class AppStateModel extends foundation.ChangeNotifier {
-
   //* All the available products.
-  late List<Product> _availableProducts;
+  List<Product> _availableProducts = [];
 
   //* The currently selected category of products.
   Category _selectedCategory = Category.all;
@@ -33,7 +34,7 @@ class AppStateModel extends foundation.ChangeNotifier {
 
   //* Totaled prices of the items in the cart.
   double get subtotalCost {
-    return _productsInCart.keys.map((id)  {
+    return _productsInCart.keys.map((id) {
       return getProductById(id).price * (_productsInCart[id] ?? 0);
     }).fold(0.0, (accumulator, extendedPrice) {
       return accumulator + extendedPrice;
@@ -41,12 +42,12 @@ class AppStateModel extends foundation.ChangeNotifier {
   }
 
   //* Total shipping cost for the items in the cart.
-  double get shippingCost{
-    return _shippingCostPerItem * 
-    _productsInCart.values.fold(0.0, (accumulator, itemCount){
-      return accumulator + itemCount;
-    });  
-  }  
+  double get shippingCost {
+    return _shippingCostPerItem *
+        _productsInCart.values.fold(0.0, (accumulator, itemCount) {
+          return accumulator + itemCount;
+        });
+  }
 
   //* Sales tax for the items in the cart
   double get tax {
@@ -60,16 +61,19 @@ class AppStateModel extends foundation.ChangeNotifier {
 
   //* Returns a copy of the list of available products, filtered by category.
   List<Product> getProducts() {
-    if (_availableProducts == null) {
+    if (_availableProducts.isEmpty) {
+      print('No available products');
       return [];
-    }
-
-    if (_selectedCategory == Category.all) {
-      return List.from(_availableProducts);
     } else {
-      return _availableProducts.where((p) {
-        return p.category == _selectedCategory;
-      }).toList();
+      if (_selectedCategory == Category.all) {
+        print('Returning all products');
+        return List.from(_availableProducts);
+      } else {
+        print('Returning filtered products:');
+        return _availableProducts.where((p) {
+          return p.category == _selectedCategory;
+        }).toList();
+      }
     }
   }
 

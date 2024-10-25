@@ -1,10 +1,14 @@
 import 'package:flutter/cupertino.dart';
+
+//* My imports
 import 'product_list_tab.dart';
 import 'search_tab.dart';
 import 'shopping_cart_tab.dart';
 import 'styles.dart';
 
 class CupertinoStoreApp extends StatelessWidget {
+  const CupertinoStoreApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
@@ -14,6 +18,8 @@ class CupertinoStoreApp extends StatelessWidget {
 }
 
 class CupertinoStoreHomePage extends StatelessWidget {
+  const CupertinoStoreHomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
@@ -34,7 +40,6 @@ class CupertinoStoreHomePage extends StatelessWidget {
         ],
       ),
       tabBuilder: (context, index) {
-        // assert(index >= 0 && index <= 2);
         Widget returnValue = const SizedBox.shrink();
         switch (index) {
           case 0:

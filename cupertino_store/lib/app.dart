@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'product_list_tab.dart';
 import 'search_tab.dart';
 import 'shopping_cart_tab.dart';
-import 'styles.dart';
 
 class CupertinoStoreApp extends StatelessWidget {
   const CupertinoStoreApp({Key? key}) : super(key: key);
@@ -57,7 +56,7 @@ class CupertinoStoreHomePage extends StatelessWidget {
 
           case 2:
             return CupertinoTabView(builder: (context) {
-              return const CupertinoPageScaffold(
+              return CupertinoPageScaffold(
                 child: ShoppingCartTab(),
               );
             });

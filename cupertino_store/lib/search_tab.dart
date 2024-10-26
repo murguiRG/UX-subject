@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
+
+//* My imports
 import 'model/app_state_model.dart';
 import 'product_row_item.dart';
 import 'search_bar.dart';
-import 'styles.dart';
 
 class SearchTab extends StatefulWidget {
   const SearchTab({Key? key}) : super(key: key);
@@ -56,8 +57,8 @@ class _SearchTabState extends State<SearchTab> {
 
     return DecoratedBox(
       decoration: const BoxDecoration(
-        color: Styles.scaffoldBackground,
-      ),
+          // color: CupertinoColors.white,
+          ),
       child: SafeArea(
         child: Column(
           children: [

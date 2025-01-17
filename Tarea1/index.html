@@ -1,57 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .cta-button {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-      }
-      .carousel {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .carousel img {
-        margin: 10px 0;
-      }
-      .content-section {
-        display: flex;
-        align-items: center;
-      }
-      .content-section img {
-        margin-right: 20px;
-      }
-    </style>
-  </head>
-  <body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refugio de Perros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <header>
-      <img src="large-image.jpg" alt="Large Image" />
-      <a href="#" class="cta-button">Call to Action</a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#carrusel-imagen">Galería</a></li>
+                <li><a href="#carrusel-tarjetas">Perros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
-      <section class="carousel">
-        <img src="image1.jpg" alt="Image 1" />
-        <img src="image2.jpg" alt="Image 2" />
-        <img src="image3.jpg" alt="Image 3" />
-      </section>
-      <section class="content-section">
-        <img src="side-image.jpg" alt="Side Image" />
-        <div>
-          <h2>Section Title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non
-            urna vitae libero bibendum tincidunt.
-          </p>
-        </div>
-      </section>
+        <section id="carrusel-imagen" class="fullscreen">
+            <div class="carousel">
+                <img src="https://via.placeholder.com/1920x1080" alt="Imagen grande del refugio">
+            </div>
+        </section>
+
+        <section id="carrusel-tarjetas" class="fullscreen">
+            <h2>Conoce a nuestros perros</h2>
+            <div class="card-carousel">
+                <article class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Perro 1">
+                    <h3>Nombre del Perro</h3>
+                    <p>Descripción breve del perro.</p>
+                </article>
+                <article class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Perro 2">
+                    <h3>Nombre del Perro</h3>
+                    <p>Descripción breve del perro.</p>
+                </article>
+                <article class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Perro 2">
+                    <h3>Nombre del Perro</h3>
+                    <p>Descripción breve del perro.</p>
+                </article>
+                <!-- Agregar más tarjetas según sea necesario -->
+            </div>
+        </section>
+
+        <section id="contacto">
+            <div class="contact-container">
+                <!-- Bloque derecho -->
+                <div class="contact-right">
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.837838633446!2d-122.42123328468143!3d37.77492937975861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858199bc1e3033%3A0xd171acde9d1b800f!2sCalle%20Falsa%20123%2C%20San%20Francisco%2C%20CA!5e0!3m2!1ses!2sus!4v1615942747881!5m2!1ses!2sus" width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="social-media">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+
+                <!-- Bloque izquierdo -->
+                <div class="contact-left">
+                    <h2>Contacto</h2>
+                    <p><strong>Ubicación:</strong> Calle Falsa 123, Ciudad Ejemplo</p>
+                    <p><strong>Involucrados:</strong> Juan Pérez, Ana López, Marta Gómez</p>
+                    <p><strong>Teléfono:</strong> 🇲🇽 +52 55 1234 5678</p>
+                    <p><strong>Correo:</strong> contacto@refugioejemplo.com</p>
+                </div>
+
+            </div>
+        </section>
+
     </main>
-  </body>
+
+    <footer>
+        <ul>
+            <li><a href="#">Política de Privacidad</a></li>
+            <li><a href="#">Términos y Condiciones</a></li>
+            <li><a href="#">Soporte</a></li>
+        </ul>
+        <p>&copy; 2025 Refugio de Perros. Todos los derechos reservados.</p>
+    </footer>
+</body>
 </html>
-<main></main>

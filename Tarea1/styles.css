@@ -1,0 +1,224 @@
+/* styles.css */
+/* Reset básico */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Elimina bordes de listas y enlaces */
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Reseteo de botones */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Reseteo de inputs y textarea */
+input,
+textarea {
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Establecer un ancho de línea predeterminado para mejor legibilidad */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Elimina bordes por defecto en imágenes */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Establece que los elementos ocupen el 100% de su contenedor si es posible */
+html {
+    font-size: 100%; /* 1rem = 16px */
+    scroll-behavior: smooth;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+/* Manejo de tablas */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.fullscreen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#carrusel-tarjetas {
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.card-carousel {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    max-width: 300px;
+    text-align: left;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#contacto {
+    padding: 2rem;
+    background-color: #f1f1f1;
+}
+
+.contact-container {
+    display: flex;
+    align-items: stretch; /* Asegura que ambos bloques ocupen la misma altura */
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.contact-left {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Contenido en la parte superior */
+    align-items: flex-start; /* Alineado a la izquierda */
+}
+
+    .contact-left h2 {
+        margin-bottom: 0;
+    }
+
+    .contact-left p {
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+    }
+
+.contact-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra verticalmente */
+}
+
+    .contact-right .map {
+        margin-bottom: 1rem;
+    }
+
+    .contact-right .social-media {
+        display: flex;
+        gap: 1rem;
+    }
+
+        .contact-right .social-media a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 1.2rem;
+        }
+
+            .contact-right .social-media a:hover {
+                text-decoration: underline;
+            }
+
+
+.social-media a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
